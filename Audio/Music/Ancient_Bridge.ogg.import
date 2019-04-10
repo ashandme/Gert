@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Bridge.ogg-c140c85e1ec4689a674d21f1b688a8ac.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/Ancient_Bridge.ogg"
+dest_files=[ "res://.import/Ancient_Bridge.ogg-c140c85e1ec4689a674d21f1b688a8ac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

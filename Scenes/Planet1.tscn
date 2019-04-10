@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Stage01.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Ash/Ash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objets/DanguerZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objets/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/Trehy/Trehy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Gruti.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Characters/Leat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Audio/Music/MAPA_01.ogg" type="AudioStream" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Stage01" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="OutScene" type="Area2D" parent="."]
+position = Vector2( 279, 735 )
+scale = Vector2( 26.7188, 1.76563 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutScene"]
+position = Vector2( 0, 2.38419e-005 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 1 )
+
+[node name="Ash" parent="." instance=ExtResource( 3 )]
+position = Vector2( 633, 181 )
+
+[node name="DanguerZone" parent="." instance=ExtResource( 4 )]
+position = Vector2( 845, 184.25 )
+scale = Vector2( 1.30754, 0.820313 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 238, 157 )
+scale = Vector2( 0.234375, 0.322265 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 5, 189.938 )
+scale = Vector2( 0.15625, 0.626952 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 449.5, 215 )
+scale = Vector2( 14.0781, 0.15625 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 219, 144.984 )
+scale = Vector2( 0.15625, 0.780762 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 545, 195 )
+scale = Vector2( 0.199218, 0.467774 )
+
+[node name="Wall12" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 427, 195 )
+scale = Vector2( 0.199218, 0.467774 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 131.5, 203.734 )
+scale = Vector2( 0.234375, 0.210449 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 73, 108 )
+scale = Vector2( 0.40625, 0.15799 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 147.5, 88.875 )
+scale = Vector2( 0.703125, 0.152344 )
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 271.618, 38.3272 )
+rotation = -0.227918
+scale = Vector2( 2.5918, 0.191406 )
+
+[node name="Wall10" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 529.076, 110.821 )
+rotation = -0.198399
+scale = Vector2( 2.04688, 0.328125 )
+
+[node name="Wall11" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 449, 72 )
+scale = Vector2( 0.202636, 1.71484 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Trehy" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 190, 156 )
+
+[node name="Trehy2" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 389, 105 )
+
+[node name="Gruti" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 268, 103 )
+scale = Vector2( 0.625, 0.625 )
+Speed = 10
+
+[node name="Leat" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 493, 194 )
+
+[node name="SeeGold" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[connection signal="body_entered" from="OutScene" to="." method="_on_OutScene_body_entered"]

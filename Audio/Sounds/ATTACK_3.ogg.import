@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ATTACK_3.ogg-5f1b4d367b7e85a8a805a5d0260a500f.oggstr"
+
+[deps]
+
+source_file="res://Audio/Sounds/ATTACK_3.ogg"
+dest_files=[ "res://.import/ATTACK_3.ogg-5f1b4d367b7e85a8a805a5d0260a500f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
