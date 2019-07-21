@@ -3,11 +3,11 @@
 [ext_resource path="res://Scripts/Stage01.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/Ash/Ash.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objets/DanguerZone.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Objets/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objets/DangerZone/DanguerZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objets/Wall/Wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Trehy/Trehy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Characters/Gruti.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Characters/Leat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Gruti/Gruti.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Characters/Leat/Leat.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Audio/Music/MAPA_01.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -28,7 +28,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutScene"]
-position = Vector2( 0, 2.38419e-005 )
+position = Vector2( 0, 2.38419e-05 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 1 )
 
@@ -109,5 +109,4 @@ position = Vector2( 493, 194 )
 
 [node name="SeeGold" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-
 [connection signal="body_entered" from="OutScene" to="." method="_on_OutScene_body_entered"]

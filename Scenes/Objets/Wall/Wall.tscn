@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Objets/Wall/Wall.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Objets/Wall/sprWall0.png" type="Texture" id=2]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Wall" type="StaticBody2D" groups=[
+"Wall",
+]]
+scale = Vector2( 0.15625, 0.15625 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Wallspr" type="Sprite" parent="."]
+use_parent_material = true
+position = Vector2( 9.53674e-007, 1.90735e-006 )
+scale = Vector2( 6.4, 6.4 )
+texture = ExtResource( 2 )
+
+[node name="WallCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -32, -32, 64, 64 )
+
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

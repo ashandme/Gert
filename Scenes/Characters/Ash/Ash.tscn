@@ -21,7 +21,7 @@ height = 18.129
 
 [sub_resource type="Animation" id=2]
 resource_name = "Attack1"
-length = 0.14
+length = 0.5
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -30,10 +30,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.01, 0.03, 0.05, 0.07, 0.09, 0.11, 0.13 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 15, 16, 17, 18, 19, 20, 21 ]
+"values": [ 11, 12, 13, 15, 16, 17 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -87,7 +87,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 11 ]
+"values": [ 10 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -103,7 +103,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 12 ]
+"values": [ 10 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Legs:frame")
@@ -132,7 +132,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+"values": [ 1, 2, 3, 4, 5, 6, 0, 7, 8, 9 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Legs:frame")
@@ -172,7 +172,7 @@ tracks/3/keys = {
 [node name="Ash" type="KinematicBody2D" groups=[
 "Player",
 ]]
-position = Vector2( -1, 0 )
+position = Vector2( 11.5701, 15.3634 )
 collision_layer = 4
 collision_mask = 9
 script = ExtResource( 1 )
@@ -210,14 +210,14 @@ position = Vector2( 0, 4 )
 texture = ExtResource( 2 )
 vframes = 5
 hframes = 3
-frame = 5
+frame = 1
 
 [node name="Body" type="Sprite" parent="."]
 position = Vector2( 0, -6 )
 texture = ExtResource( 3 )
 vframes = 5
 hframes = 5
-frame = 5
+frame = 17
 
 [node name="AshAnim" type="AnimationPlayer" parent="."]
 playback_speed = 3.0
@@ -278,4 +278,3 @@ max_value = 5.0
 value = 5.0
 texture_under = ExtResource( 13 )
 texture_progress = ExtResource( 14 )
-[connection signal="animation_finished" from="AshAnim" to="." method="_on_AshAnim_animation_finished"]

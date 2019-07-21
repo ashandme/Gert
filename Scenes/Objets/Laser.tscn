@@ -7,7 +7,8 @@
 [ext_resource path="res://Sprites/Objets/Shoot/Laser/sprLaserD1.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Objets/Shoot/Laser/sprLaserD2.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Objets/Shoot/Laser/sprLaserD3.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Objets/DanguerZone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Objets/DangerZone/DanguerZone.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
