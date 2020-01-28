@@ -1,7 +1,7 @@
 extends KinematicBody2D
 export var Speed = 60
 
-var Gravity = 15
+var Gravity = 9
 var Movement = Vector2()
 const Floor = Vector2(0, -1)
 var Direction = 1

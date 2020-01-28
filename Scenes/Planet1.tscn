@@ -70,7 +70,7 @@ position = Vector2( 131.5, 203.734 )
 scale = Vector2( 0.234375, 0.210449 )
 
 [node name="Wall7" parent="Walls" instance=ExtResource( 5 )]
-position = Vector2( 73, 108 )
+position = Vector2( 55, 147 )
 scale = Vector2( 0.40625, 0.15799 )
 
 [node name="Wall8" parent="Walls" instance=ExtResource( 5 )]

@@ -10,7 +10,7 @@ var Direction = 1
 var on_ground = false
 var Wall = false
 var canMove = 0
-var Gravity = 15
+var Gravity = 9
 var Jump = -350
 func _ready():
 	$Look.add_exception(get_node("DanguerZone"))

@@ -5,7 +5,7 @@ func _ready():
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.stop()
 func _on_Play_button_down():
-	$Control/VBoxContainer.set_visible(false)
+	disable_B()
 	if $Anim.is_playing() == false:
 		$Anim.play("play")
 func _on_Settings_button_down():
@@ -15,3 +15,7 @@ func _on_Exit_button_down():
 func _on_Anim_animation_finished(anim_name):
 	if anim_name == "play":
 		get_tree().change_scene("res://Scenes/Planet1.tscn")
+func disable_B():
+	$Control/VBoxContainer/Play.disabled = true
+	$Control/VBoxContainer/Exit.disabled = true
+	$Control/VBoxContainer/Settings.disabled = true

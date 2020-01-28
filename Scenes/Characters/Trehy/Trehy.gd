@@ -1,11 +1,11 @@
 extends KinematicBody2D
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 var Speed = 40
-var Gravity = 15
+var Gravity = 9
 var Direcction = -1
 var Movement = Vector2()
 const Floor = Vector2(0, -1)
-var jump = -350
+var jump = -250
 var heart = 5
 var canMove = 0
 var on_ground = false

@@ -1,10 +1,7 @@
 extends KinematicBody2D
-#------------------------------------------------------------------------------------------#
-#--------------------------------|declaration of variables|--------------------------------#
-#------------------------------------------------------------------------------------------#
-var Movement = Vector2(); #vec2 gives horizontal and Vertical value
-var Gravity = 13;
-var Jump = -300;
+var Movement = Vector2();
+var Gravity = 9;
+var Jump = -220;
 const FLOOR = Vector2(0 , -1);
 var Speed = 70; 
 var Direction = -1; #get direction for flip sprites
@@ -14,16 +11,16 @@ var Heart = 5;
 func _physics_process(delta):
 	if Heart > 0:
 		#---|input|---#
-		if Input.is_action_pressed("Right_M"):
+		if Input.is_action_pressed("ui_right"):
 			Movement.x = Speed;
-		elif Input.is_action_pressed("Left_M"):
+		elif Input.is_action_pressed("ui_left"):
 			Movement.x = -Speed;
 		else:
 			Movement.x = 0
-		if Input.is_action_just_pressed("Jump"):
+		if Input.is_action_just_pressed("ui_cancel"):
 			if OnG == true:
 				Movement.y = Jump
-		if Input.is_action_just_pressed("Attack_X"):
+		if Input.is_action_just_pressed("ui_accept"):
 			attack()
 		#--------|change the value of OnG if the character is on ground|--------#
 		if is_on_floor():
@@ -74,5 +71,5 @@ func attack():
 		$Body/BodyAnim.play("Attack1")
 		boolAttack = true
 		yield($Body/BodyAnim,"animation_finished")
-		boolAttack = false
+		boolAttack = false	
 		$Legs/LegsAnim.stop()
